@@ -277,7 +277,7 @@ import math
 ##############################################################
 ######################################################
 
-#class Car:
+# class Car:
 #    def go(self):
 #        print("Going......")
 #
@@ -288,18 +288,18 @@ import math
 #        print(f"filling litter of gas {num}")
 #
 #
-#mazda = Car()
-#mazda.go()
+# mazda = Car()
+# mazda.go()
 #
-#if isinstance(mazda, Car):  # בודק אם משתנה מסוג מזדה הוא מסוג קלאס קאר
+# if isinstance(mazda, Car):  # בודק אם משתנה מסוג מזדה הוא מסוג קלאס קאר
 #    """אם מזדה מסוג קאר"""
 #    print(Car.go())
 #
 ###################################
-#import math
+# import math
 #
 #
-#class Circle():
+# class Circle():
 #    def __init__(self, r):
 #        self.r = r
 #
@@ -315,16 +315,94 @@ import math
 #        return f"Circle -> radius : {self.r}"
 #
 
-#c1 = Circle(5)
-#c2 = Circle(8)
+# c1 = Circle(5)
+# c2 = Circle(8)
 #
-#print(c1.calc_herkef())
-#print(c2.calc_area())
+# print(c1.calc_herkef())
+# print(c2.calc_area())
 
 
 #####################################
 
-a ='python'
-b = [1,2,3]
-aTup =(a,b)
-print(aTup[1][1:])
+# a ='python'
+# b = [1,2,3]
+# aTup =(a,b)
+# print(aTup[1][1:])
+
+###################################### 24.03.23
+
+# class BankAcount:
+#    def __init__(self, balance=0, owner=' ', id=0, credit_score=0):
+#        self.balance = balance
+#        self.owner = owner
+#        self.id = id
+#        self.credit_score = credit_score
+#
+#    def deposite(self, amount):
+#        self.balance += amount
+#
+#    def withdraw(self, amount):
+#        self.balance += amount
+#
+#    def __str__(self):
+#        return f'bank accoint {self.owner} id:{self.id}'
+#
+#    def __eq__(self, other):
+#        return self.balance == other.balance
+#
+#    def __gt__(self, other):
+#        return self.balance > other.balance
+#
+#    def __ge__(self, other):
+#        return self.balance >= other.balance
+#
+#    def __len__(self):
+#        return len(self.owner.split())
+#
+#
+# acc1 = BankAcount(12, 'Dvir', 4, 5)
+# acc2 = BankAcount(12, 'Raz', 4, 5)
+# print(acc1 == acc2)
+
+#################################################
+
+class burger:
+    def __init__(self, calories, topping, price):
+        self.__calories = calories
+        self.topping = topping
+        self.__price = price
+
+    @property
+    def calories(self):
+        return self.__calories
+
+    @calories.setter
+    def calories(self, new_calories):
+        if new_calories >= 0:
+            self.__calories = new_calories
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, new_price):
+        if self.__price >= 0:
+            self.__price = new_price
+
+    def __str__(self):
+        return f'Your burger price is {self.__price} \nCalories is {self.__calories} \nThe topping is {self.topping}'
+
+
+McD = burger(500, 'carmel', 29.90)
+print(McD)
+
+##################################################################################
+
+import datetime  # like all date with hour and minute
+import time  # like a timer
+
+x = datetime.datetime
+y = time.time()
+
+print(f'{x.day}/{x.month}/{x.year} \n{x.hour}:{x.second}')
